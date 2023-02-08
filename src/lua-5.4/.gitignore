@@ -1,5 +1,8 @@
 cmake-build-*/
+out/
 .idea/
+.vs
+CMakeSettings.json
 
 .gitattributes
 

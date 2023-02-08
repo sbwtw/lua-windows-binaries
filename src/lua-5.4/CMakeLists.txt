@@ -14,13 +14,13 @@ if (MSVC AND NOT (CMAKE_BUILD_TYPE MATCHES DEBUG))
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /NODEFAULTLIB:libcmt /LTCG")
 endif()
 
-add_library(Lua STATIC ${SOURCES})
+add_library(Lua SHARED ${SOURCES})
 set_property(TARGET Lua PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 add_executable(LuaI lua.c)
-target_link_libraries(LuaI Lua m)
+target_link_libraries(LuaI Lua)
 
 add_executable(LuaC luac.c)
-target_link_libraries(LuaC Lua m)
+target_link_libraries(LuaC Lua)
 
 add_subdirectory("testes/libs" "testes")
