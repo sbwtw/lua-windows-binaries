@@ -1,3 +1,6 @@
 /src/*.o
 /src/luasocket/*.o
 /*.dll
+.vs/
+x64
+*.user
